@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f1f1f1;
+            color: #333;
+            line-height: 1.6;
+            font-size: 16px;
+            padding: 0;
+            transition: background-color 0.3s ease;
+        }
+
+        header {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 50px 20px;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        header h1 {
+            font-size: 4rem;
+            margin-bottom: 10px;
+            font-weight: 700;
+            animation: slideInFromLeft 1.5s ease-out;
+        }
+
+        header p {
+            font-size: 1.3rem;
+            animation: slideInFromRight 1.5s ease-out;
+            animation-delay: 0.3s;
+            color: #bbb;
+        }
+
+        .projects {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 60px;
+            animation: fadeInUp 1s ease-out;
+            padding: 20px;
+        }
+
+        .project {
+            background-color: #fff;
+            padding: 25px;
+            width: 28%;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            margin: 10px 0;
+            position: relative;
+            z-index: 1;
+            overflow: hidden;
+            cursor: pointer;
+        }
+
+        .project h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 15px;
+            transition: color 0.3s ease;
+        }
+
+        .project p {
+            font-size: 1rem;
+            color: #777;
+            margin-bottom: 20px;
+            transition: color 0.3s ease;
+        }
+
+        .project button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.1rem;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .project button:hover {
+            background-color: #45a049;
+            transform: scale(1.05);
+        }
+
+        .project:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .project:hover h2 {
+            color: #4CAF50;
+        }
+
+        .project:hover p {
+            color: #555;
+        }
+
+        .coming-soon {
+            background-color: #ddd;
+            color: #777;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 1.2rem;
+            font-weight: 500;
+            cursor: not-allowed;
+        }
+
+        .coming-soon h2 {
+            color: #999;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 80px;
+            position: relative;
+            animation: fadeIn 1s ease-out;
+        }
+
+        footer p {
+            font-size: 1.2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInFromLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        @keyframes slideInFromRight {
+            from {
+                opacity: 0;
+                transform: translateX(100px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .projects {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project {
+                width: 80%;
+            }
+
+            header h1 {
+                font-size: 3rem;
+            }
+
+            header p {
+                font-size: 1.1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            header h1 {
+                font-size: 2.5rem;
+            }
+
+            .project {
+                width: 90%;
+            }
+
+            .project h2 {
+                font-size: 1.8rem;
+            }
+
+            footer p {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>HampterPW's Portfolio</h1>
+        <p>Explore my outrageose and very useful project, with 3 components.</p>
+    </header>
+
+    <section class="projects">
+        <div class="project">
+            <h2>Main Programming Language</h2>
+            <p>The first piece of the puzzle.</p>
+            <a href="https://github.com/codeframe-studios/Main" target="_blank">
+                <button>Learn More</button>
+            </a>
+        </div>
+        <div class="project coming-soon">
+            <h2>Second Piece</h2>
+            <p>Coming Soon</p>
+        </div>
+        <div class="project coming-soon">
+            <h2>Third Piece</h2>
+            <p>Coming Soon</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 My Portfolio | All Rights Reserved</p>
+    </footer>
+
+</body>
+</html>
